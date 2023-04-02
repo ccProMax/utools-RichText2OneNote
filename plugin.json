@@ -1,0 +1,21 @@
+{
+	"logo": "logo.png",
+	"preload": "preload.js",
+	"version": "1.0.0",
+	"author": "xjs",
+	"homepage": "ccProMax.github.io",
+	"platform": ["win32"],
+	"pluginSetting": {
+		"single": false
+	},
+	"features": [{
+		"code": "handle",
+		"explain": "idea中复制的代码粘贴到OneNote;能够避免空格消失。需要python环境",
+		"cmds": [{
+			"type": "over",
+			"label": "复制为富文本",
+			"minLength": 1,
+			"maxLength": 100000
+		}]
+	}]
+}
