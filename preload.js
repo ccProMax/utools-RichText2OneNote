@@ -1,4 +1,4 @@
-const { exec } = require('child_process');
+const { execSync } = require('child_process');
 
 window.handle = function () {
 	const path = __dirname
@@ -6,7 +6,7 @@ window.handle = function () {
 	const cod = `python ${path}/demo2.py`
 	// utools.showNotification(cod);
 	// utools.copyText(cod);
-	const info = exec(cod)
+	const info = execSync(cod)
 	// utools.showNotification('OK');
 	// utools.copyText(info);
 	info.stdout.on('data', (data) => {

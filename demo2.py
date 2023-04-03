@@ -1,4 +1,4 @@
-import pyperclip
+# import pyperclip
 import win32clipboard
 from bs4 import BeautifulSoup
 
@@ -7,8 +7,14 @@ win32clipboard.OpenClipboard()
 clipboard_html = win32clipboard.GetClipboardData(win32clipboard.RegisterClipboardFormat("HTML Format"))
 win32clipboard.CloseClipboard()
 
+
 # 解析HTML源码
 soup = BeautifulSoup(clipboard_html, 'html.parser')
+
+
+# 解析HTML源码并删除背景色
+for tag in soup.find_all(True):
+    tag.attrs = {key:val for key,val in tag.attrs.items() if key != 'style' or 'background' not in val}
 
 
 # 将修改后的HTML源码重新写入剪贴板中
