@@ -1,17 +1,18 @@
 const { execSync } = require('child_process');
 
 window.handle = function () {
-	const path = __dirname
+	// const path = __dirname
 	// utools.showNotification(path);
-	const cod = `python ${path}/demo2.py`
+	// const cod = `python ${path}/demo.py`
+	const cod = `python D:\demo.py`
 	// utools.showNotification(cod);
 	// utools.copyText(cod);
 	const info = execSync(cod)
 	// utools.showNotification('OK');
 	// utools.copyText(info);
-	info.stdout.on('data', (data) => {
+	if (!info.status) {
 		utools.showNotification('OK');
-	});
+	}
 	info.stderr.on('data', (data) => {
 		utools.copyText(data);   // 将内容放进剪贴板，可用于debug
 		utools.showNotification('Error');
@@ -29,7 +30,7 @@ window.exports = {
 
 				window.handle();
 				// utools.copyText(copyText);   // 将内容放进剪贴板，可用于debug
-				
+				// utools.showNotification('OK');
 
 				window.utools.outPlugin()
 			}
