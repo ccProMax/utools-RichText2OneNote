@@ -1,4 +1,4 @@
-# 第三个版本，目前没有任何问题了。
+# 第三个版本，在公司用没问题，在家用所有字体都变成默认字体了。
 import win32clipboard
 from bs4 import BeautifulSoup
 
