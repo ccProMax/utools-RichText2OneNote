@@ -10,6 +10,9 @@ window.handle = function () {
 	const info = execSync(cod)
 	const str = info.toString();
 	utools.showNotification(str);
+	if (str.length != 4) {
+		utools.copyText(str);
+	}
 }
 
 
@@ -21,7 +24,7 @@ window.exports = {
 
 				window.utools.hideMainWindow()
 
-				info = window.handle();
+				window.handle();
 				// utools.copyText(copyText);   // 将内容放进剪贴板，可用于debug
 				// utools.showNotification('OK');
 				window.utools.outPlugin()
