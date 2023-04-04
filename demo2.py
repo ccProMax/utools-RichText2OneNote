@@ -1,4 +1,4 @@
-# import pyperclip
+# 第二个版本，能够去除黑色背景，但是字体还是有问题
 import win32clipboard
 from bs4 import BeautifulSoup
 

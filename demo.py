@@ -1,4 +1,4 @@
-import pyperclip
+# 最初版本，在自己电脑上正常，在公司电脑上会有黑色背景
 import win32clipboard
 from bs4 import BeautifulSoup
 
