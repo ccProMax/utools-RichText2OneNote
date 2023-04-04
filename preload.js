@@ -12,6 +12,7 @@ window.handle = function () {
 	// utools.copyText(info);
 	if (!info.status) {
 		utools.showNotification('OK');
+		return
 	}
 	info.stderr.on('data', (data) => {
 		utools.copyText(data);   // 将内容放进剪贴板，可用于debug
@@ -28,10 +29,10 @@ window.exports = {
 
 				window.utools.hideMainWindow()
 
-				window.handle();
+				info = window.handle();
 				// utools.copyText(copyText);   // 将内容放进剪贴板，可用于debug
 				// utools.showNotification('OK');
-
+				utools.showNotification(111);
 				window.utools.outPlugin()
 			}
 		}
