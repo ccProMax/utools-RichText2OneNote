@@ -10,7 +10,7 @@ window.handle = function () {
 	const info = execSync(cod)
 	// utools.showNotification('OK');
 	// utools.copyText(info);
-	if (!info.status) {
+	if (info.status) {
 		utools.showNotification('OK');
 		return
 	}
