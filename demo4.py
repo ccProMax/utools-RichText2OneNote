@@ -78,9 +78,13 @@ def clipboard(soup):
 
 
 if __name__ == '__main__':
-    soup = getsoup()
-    soup = delbackground(soup)
-    soup = fontSize(soup)
-    soup = delspanfont(soup)
-    clipboard(soup)
-    print(soup)
+    try:
+        soup = getsoup()
+        soup = delbackground(soup)
+        soup = fontSize(soup)
+        soup = delspanfont(soup)
+        clipboard(soup)
+    except Exception as err:
+        print('Error', err)
+    else:
+        print("OK")

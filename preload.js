@@ -8,19 +8,8 @@ window.handle = function () {
 	// utools.showNotification(cod);
 	// utools.copyText(cod);
 	const info = execSync(cod)
-	// utools.showNotification('OK');
-	// utools.copyText(info);
-	if (info.status) {
-		utools.showNotification('OK');
-		return
-	}
-	else {
-		utools.showNotification('失败');
-	}
-	info.stderr.on('data', (data) => {
-		utools.copyText(data);   // 将内容放进剪贴板，可用于debug
-		utools.showNotification('Error');
-	});
+	const str = info.toString();
+	utools.showNotification(str);
 }
 
 
