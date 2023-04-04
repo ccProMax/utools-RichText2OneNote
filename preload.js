@@ -14,6 +14,9 @@ window.handle = function () {
 		utools.showNotification('OK');
 		return
 	}
+	else {
+		utools.showNotification('失败');
+	}
 	info.stderr.on('data', (data) => {
 		utools.copyText(data);   // 将内容放进剪贴板，可用于debug
 		utools.showNotification('Error');
@@ -32,7 +35,6 @@ window.exports = {
 				info = window.handle();
 				// utools.copyText(copyText);   // 将内容放进剪贴板，可用于debug
 				// utools.showNotification('OK');
-				utools.showNotification(111);
 				window.utools.outPlugin()
 			}
 		}
