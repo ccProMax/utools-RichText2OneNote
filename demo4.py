@@ -109,7 +109,7 @@ def remove_source_url(soup):
     return soup
 
 
-# 将\n都换为<br/>
+# 处理换行符
 def add_br_tags(soup):
     # 找到所有的span标签
     span_tags = soup.find_all('span')
@@ -118,7 +118,7 @@ def add_br_tags(soup):
     for span_tag in span_tags:
         br_tag = span_tag.find('br')  # 查找<span>标签内的<br>标签
         if br_tag:  # 如果存在<br>标签
-            br_tag.replace_with('\n')  # 使用replace_with()方
+            br_tag.replace_with('\n')  # 将<br>换为'\n'
         a += span_tag.text
     return soup
 
@@ -140,7 +140,7 @@ if __name__ == '__main__':
         soup = fontSize(soup)
         # 遍历所有span标签，如果里面定义了字体，那么就把它定义的字体改为consolas。
         soup = delspanfont(soup)
-        soup = add_br_tags(soup)             # 将换行符\n，替换成<br/>
+        soup = add_br_tags(soup)             # 处理换行符
         # soup = remove_source_url(soup)       # 删除前面带有的SourceURL
         clipboard(soup)                      # 写入剪贴板。
         # print(soup)
